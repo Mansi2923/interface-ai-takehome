@@ -1,0 +1,8 @@
+{"ts": "2026-08-20T23:57:53.271356+00:00", "run_type": "replay", "event": "replay_started", "capability_id": "eb3d3e4c-64ae-4f2b-a03d-fc7c386ad250", "capability_name": "search_member_by_id_and_get_savings_balance", "params": {"member_id": "12345"}}
+{"ts": "2026-08-20T23:57:56.399834+00:00", "run_type": "replay", "event": "locator_resolved", "step_id": "s1", "matched": "role=textbox[name='']"}
+{"ts": "2026-08-20T23:57:56.416352+00:00", "run_type": "replay", "event": "step_executed", "step_id": "s1", "action": "type"}
+{"ts": "2026-08-20T23:57:56.427682+00:00", "run_type": "replay", "event": "locator_resolved", "step_id": "s2", "matched": "role=button[name='Search']"}
+{"ts": "2026-08-20T23:57:56.482004+00:00", "run_type": "replay", "event": "step_executed", "step_id": "s2", "action": "click"}
+{"ts": "2026-08-20T23:57:56.512531+00:00", "run_type": "replay", "event": "locator_resolved", "step_id": "s6", "matched": "css=table tr:nth-child(3) td:nth-child(2)"}
+{"ts": "2026-08-20T23:57:56.517723+00:00", "run_type": "replay", "event": "step_executed", "step_id": "s6", "action": "extract"}
+{"ts": "2026-08-20T23:58:01.541689+00:00", "run_type": "replay", "event": "replay_success", "outputs": {"savings_balance": "$4820.11"}}

@@ -1,0 +1,1 @@
+{"ts": "2026-08-17T18:30:05.313687+00:00", "run_type": "discovery", "event": "discovery_started", "goal": "Search for member 12345 using the member ID field, then read and report their savings balance from the member detail page.", "target_url": "http://127.0.0.1:5055"}

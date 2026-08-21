@@ -1,0 +1,10 @@
+{
+  "request_id": "esc-1787269323",
+  "run_id": "replay-search_member_by_id_and_get_savings_balance-1787269310",
+  "capability_or_goal": "search_member_by_id_and_get_savings_balance",
+  "step_id": "s6",
+  "reason": "Step s6 (extract) failed: No locator resolved. Tried: 'role=cell[name='$4820.11']' -> not visible within 5000ms: Locator.wait_for: Timeout 5000ms exceeded.\nCall log:\nwaiting for get_by_role(\"cell\", name=\"$4820.11\").first to be visible\n; 'text=$4820.11' -> not visible within 5000ms: Locator.wait_for: Timeout 5000ms exceeded.\nCall log:\nwaiting for get_by_text(\"$4820.11\", exact=True).first to be visible\n",
+  "page_url": "http://127.0.0.1:5055/members/search?member_id=67890",
+  "screenshot_path": "evidence/replay-search_member_by_id_and_get_savings_balance-1787269310/escalation_screenshot.png",
+  "created_at": "2026-08-20T23:42:03.840460+00:00"
+}

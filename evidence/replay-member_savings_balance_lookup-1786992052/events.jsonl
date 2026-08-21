@@ -1,0 +1,6 @@
+{"ts": "2026-08-17T18:40:52.673289+00:00", "run_type": "replay", "event": "replay_started", "capability_id": "b9a58e31-dfc4-47e3-8221-1172ca21209e", "capability_name": "member_savings_balance_lookup", "params": {"member_id": "12345"}}
+{"ts": "2026-08-17T18:40:55.688098+00:00", "run_type": "replay", "event": "locator_resolved", "step_id": "s2", "matched": "role=textbox[name='']"}
+{"ts": "2026-08-17T18:40:55.703946+00:00", "run_type": "replay", "event": "step_executed", "step_id": "s2", "action": "type"}
+{"ts": "2026-08-17T18:40:55.775292+00:00", "run_type": "replay", "event": "locator_resolved", "step_id": "s3", "matched": "role=button[name='Search']"}
+{"ts": "2026-08-17T18:40:55.866622+00:00", "run_type": "replay", "event": "step_executed", "step_id": "s3", "action": "click"}
+{"ts": "2026-08-17T18:41:00.899505+00:00", "run_type": "replay", "event": "replay_success", "outputs": {"savings_balance": null}}

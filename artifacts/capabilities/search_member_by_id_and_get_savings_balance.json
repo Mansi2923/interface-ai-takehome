@@ -1,0 +1,94 @@
+{
+  "capability_id": "eb3d3e4c-64ae-4f2b-a03d-fc7c386ad250",
+  "name": "search_member_by_id_and_get_savings_balance",
+  "description": "Searches for a member in the CoreServ Admin Console using a caller-supplied Member ID (parameter), submits the search form, waits for the member detail page to load, and extracts the Savings Balance value from that page. The Member ID is treated as a runtime parameter (this run used 12345 as an example), not a hardcoded value.",
+  "target_app": "http://127.0.0.1:5055",
+  "input_params": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "description": "Value typed into textbox ''",
+      "required": true,
+      "example": "12345"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savings_balance",
+      "type": "string",
+      "description": "The savings balance dollar value extracted from the member detail page for the searched member ID.",
+      "source_step": "s6"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s1",
+      "action": "type",
+      "risk": "safe",
+      "on_failure": "hard_fail",
+      "description": "Type member ID 12345 into the Member ID search field",
+      "locator": {
+        "primary": "role=textbox[name='']",
+        "fallbacks": [
+          "text="
+        ],
+        "reasoning": "Accessibility role+name is the most stable identifier on this non-semantic UI."
+      },
+      "value": "{{member_id}}",
+      "extract_as": null,
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "s2",
+      "action": "click",
+      "risk": "safe",
+      "on_failure": "hard_fail",
+      "description": "Click Search button to look up the member",
+      "locator": {
+        "primary": "role=button[name='Search']",
+        "fallbacks": [
+          "text=Search"
+        ],
+        "reasoning": "Accessibility role+name is the most stable identifier on this non-semantic UI."
+      },
+      "value": "",
+      "extract_as": null,
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "s6",
+      "action": "extract",
+      "risk": "safe",
+      "on_failure": "hard_fail",
+      "description": "Extract the Savings Balance value using cell role",
+      "locator": {
+        "primary": "css=table tr:nth-child(3) td:nth-child(2)",
+        "fallbacks": [],
+        "reasoning": "Structural position within the detail table (3rd row = Savings Balance), independent of the dollar value itself, which differs per member."
+      },
+      "value": "CoreServ Admin Console\nName\tDana Whitfield\nMember ID\t12345\nSavings Balance\t$4820.11\nChecking Balance\t$1023.55\n\n\nOpen Sub-Account",
+      "extract_as": "savings_balance",
+      "timeout_ms": 5000
+    }
+  ],
+  "checkpoint": {
+    "description": "Verifies: Searches for a member in the CoreServ Admin Console using a caller-supplied Member ID (parameter), submits the search form, waits for the member detail page to load, and extracts the Savings Balance value from that page. The Member ID is treated as a runtime parameter (this run used 12345 as an example), not a hardcoded value.",
+    "locator": {
+      "primary": "role=text[name='Savings Balance']",
+      "fallbacks": [
+        "text=Savings Balance"
+      ],
+      "reasoning": "Role+name from the confirming element, with a text-match fallback."
+    },
+    "expected_text_contains": "Savings Balance"
+  },
+  "allowed_domains": [
+    "127.0.0.1"
+  ],
+  "version": "1.0.0",
+  "tenant_scope": "base",
+  "base_capability_id": null,
+  "created_at": "2026-08-17T19:00:05.403064+00:00",
+  "created_by": "llm_discovery",
+  "notes": null
+}
