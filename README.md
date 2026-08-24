@@ -1,4 +1,4 @@
-# CoreServ Capability Recorder
+# Computer-Use Automation System
 
 A working answer to a specific problem: **an AI agent can't call an API on
 software that doesn't have one.** A lot of bank back-office software falls
